@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <style>
+        #red, #green, #blue {
+          float: left;
+          clear: left;
+          width: 300px;
+          margin: 15px;
+        }
+        #swatch {
+          width: 120px;
+          height: 100px;
+          margin-top: 18px;
+          margin-left: 350px;
+          background-image: none;
+        }
+        #red .ui-slider-range { background: #ef2929; }
+        #red .ui-slider-handle { border-color: #ef2929; }
+        #green .ui-slider-range { background: #8ae234; }
+        #green .ui-slider-handle { border-color: #8ae234; }
+        #blue .ui-slider-range { background: #729fcf; }
+        #blue .ui-slider-handle { border-color: #729fcf; }
+        </style>
+</head>
+<body>
+    <header>
+      <div>
+        <h1>JQUERY SESSION</h1>
+    </div>
+    <div class="container">
+        <a href="../index.html" style="color:  rgb(22, 19, 3);">WIDGETS</a>
+    </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html" style="color: rgb(22, 19, 3);">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>SLIDER</u></h1>
+            <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px; width: 180px;">
+                <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+                Simple Colorpicker
+              </p>
+               
+              <div id="red"></div>
+              <div id="green"></div>
+              <div id="blue"></div>
+               
+              <div id="swatch" class="ui-widget-content ui-corner-all"></div>
+        </article>
+    </section>
+    <footer id="foot">
+      <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>  
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          function hexFromRGB(r, g, b) {
+            var hex = [
+              r.toString( 16 ),
+              g.toString( 16 ),
+              b.toString( 16 )
+            ];
+            $.each( hex, function( nr, val ) {
+              if ( val.length === 1 ) {
+                hex[ nr ] = "0" + val;
+              }
+            });
+            return hex.join( "" ).toUpperCase();
+          }
+          function refreshSwatch() {
+            var red = $( "#red" ).slider( "value" ),
+              green = $( "#green" ).slider( "value" ),
+              blue = $( "#blue" ).slider( "value" ),
+              hex = hexFromRGB( red, green, blue );
+            $( "#swatch" ).css( "background-color", "#" + hex );
+          }
+       
+          $( "#red, #green, #blue" ).slider({
+            orientation: "horizontal",
+            range: "min",
+            max: 255,
+            value: 127,
+            slide: refreshSwatch,
+            change: refreshSwatch
+          });
+          $( "#red" ).slider( "value", 255 );
+          $( "#green" ).slider( "value", 140 );
+          $( "#blue" ).slider( "value", 60 );
+        } );
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        background-color: #ff66b2;
+        background-image: linear-gradient(135deg, #141414 25%, #222 100%);
+        color: #f4f4f9;
+      }
+      .player {
+        width: 500px;
+        height: 300px;
+        border: 2cap groove #ff66b2; 
+        background: #1c1c1c; 
+        color: #ff99cc; 
+        text-align: center;
+        line-height: 300px;
+        border-radius: 10px; 
+      }
+      .player-container {
+        background-color: #d3d3d3;
+        padding: 15px; 
+        border-radius: 10px; 
+        width: 540px; 
+        margin: 20px auto; 
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+      }
+      .ui-tooltip {
+        border: 1px solid #ff66b2; 
+        background: #f894f3; 
+        color: rgb(32, 18, 30);
+      }
+      .ui-menu {
+        position: absolute;
+        background: #ff66b2; 
+        color: #1a1115; 
+        border: 1px solid #ff66b2; 
+
+      }
+      .set {
+        display: inline-block;
+      }
+      .notification {
+        position: absolute;
+        display: inline-block;
+        font-size: 2em;
+        padding: .5em;
+        box-shadow: 2px 2px 5px -2px rgba(0, 0, 0, 0.5);
+        background: #1c1c1c; 
+        color: #ff99cc; 
+        border: 1px solid #ff66b2; 
+        border-radius: 5px; 
+      }
+      .tools button {
+        background: #f785e7; 
+        color: #fff; 
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px; 
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+    }
+
+      .tools button:hover {
+        background: #ff99cc; 
+        transform: scale(1.05); 
+      }
+      .tools {
+       margin-top: 15px; 
+      }
+      .vid-con {
+        float: left;
+        margin-left: 100px;
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html" style="color: rgb(22, 19, 3);">WIDGETS</a> 
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html" style="color: rgb(22, 19, 3);">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>TOOL TIP</u></h1>
+            <form>
+              <fieldset>
+                <div class="player">
+                  <video width="500" height="299" controls>
+                    <source src="../465298946_27452390384407106_9179143403364360523_n.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div class="tools">
+                  <span class="set">
+                    <button data-icon="ui-icon-circle-plus" title="I like this">Like</button>
+                    <button data-icon="ui-icon-circle-arrow-s">I dislike this</button>
+                  </span>
+                  <div class="set">
+                    <button data-icon="ui-icon-circle-plus" title="Add to Watch Later">Add to</button>
+                    <button class="menu" data-icon="ui-icon-triangle-1-s">Add to favorites or playlist</button>
+                    <ul>
+                      <li><div>Favorites</div></li>
+                      <li><div>Funnees</div></li>
+                      <li></li>
+                      <li><div>New playlist...</div></li>
+                    </ul>
+                  </div>
+                  <button title="Share this video">Share</button>
+                  <button data-icon="ui-icon-alert">Flag as inappropriate</button>
+                </div>
+              </fieldset>
+              
+            </form>
+        </article>
+    </section>
+    <footer id="foot">
+      <p>College of Information and Computing Sciences &copy; 2022</p> 
+  </footer>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        function notify( input ) {
+          var msg = "Selected " +
+              String.prototype.trim.call(
+                input.data( "tooltip-title" ) || input.text() );
+          $( "<div>" )
+            .appendTo( document.body )
+            .text( msg )
+            .addClass( "notification ui-state-default ui-corner-bottom" )
+            .position({
+              my: "center top",
+              at: "center top",
+              of: window
+            })
+            .show({
+              effect: "blind"
+            })
+            .delay( 1000 )
+            .hide({
+              effect: "blind",
+              duration: "slow"
+            }, function() {
+              $( this ).remove();
+            });
+        }
+     
+        $( "button" ).each(function() {
+          var button = $( this ).button({
+            icon: $( this ).data( "icon" ),
+            showLabel: !!$( this ).attr( "title" )
+          });
+          button.not( ".menu" ).on( "click", function() {
+            notify( button );
+          });
+        });
+        $( ".set" ).controlgroup({
+          items: {
+            "button" : "button"
+          }
+        });
+     
+        $( "button.menu" )
+          .on( "click", function() {
+            $( document ).tooltip( "close", { currentTarget: this });
+            var menu = $( this ).next().show().position({
+              my: "left top",
+              at: "left bottom",
+              of: this
+            });
+            $( document ).one( "click", function() {
+              menu.hide();
+            });
+            return false;
+          })
+          .next()
+            .hide()
+            .menu({
+              selected: function( event, ui ) {
+                notify( ui.item );
+              }
+            });
+     
+        $( document ).tooltip({
+          position: {
+            my: "center top",
+            at: "center bottom+5",
+          },
+          show: {
+            duration: "fast"
+          },
+          hide: {
+            effect: "hide"
+          }
+        });
+      } );
+      </script>
+    
+</body>
+</html>

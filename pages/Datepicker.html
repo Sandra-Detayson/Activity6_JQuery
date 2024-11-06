@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+        /* Override jQuery UI Datepicker styles */
+        .ui-datepicker {
+            background: rgb(245, 198, 237); /* Set background color to light blue */
+            border: 1px solid #ccc; /* Optional: Add a border */
+        }
+    
+        .ui-datepicker-header {
+            background: #e157f3; /* Header background color */
+            color: white; /* Header text color */
+        }
+    
+        .ui-datepicker-title {
+            color: white; /* Title text color */
+        }
+    
+        .ui-state-default {
+            background: #f0f0f0; /* Default day button color */
+            color: #333; /* Default day button text color */
+        }
+    
+        .ui-state-hover {
+            background: #ca75ca; /* Color when hovering over a day */
+        }
+    
+        .ui-state-active {
+            background: #fa68da; /* Active day button color */
+            color: white; /* Active day button text color */
+        }
+    
+        /* Style for weekends */
+        .ui-datepicker td.ui-datepicker-week-end {
+            background: #e6f7ff; /* Light blue for weekends */
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION</h1>
+        </div>
+        <div class="container">
+            <a href="../index.html" style="color:  rgb(22, 19, 3);">WIDGETS</a> 
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html" style="color: rgb(22, 19, 3);">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>DATE PICKER</u></h1>
+            <p>Date: <input type="text" id="datepicker"></p>
+        </article>
+    </section>
+    <footer id="foot">
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+    
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#datepicker" ).datepicker();
+        } );
+        $("#datepicker").on("change", function() {
+            // Get the selected date
+            let selectedDate = $(this).val();
+            
+            // Display the selected date in the article section
+            document.querySelector("article").innerHTML += `
+                <div>
+                    <h2>Selected Date</h2>
+                    <p>Date: ${selectedDate}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>

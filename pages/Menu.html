@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        .ui-menu { width: 150px; }
+        .ui-menu li {
+         background-color: #ffffff; /* Default background color */
+         color: #1a1115; /* Default text color */
+         padding: 5px 10px;
+        }
+
+       .ui-menu li:hover,
+       .ui-menu li:focus {
+         background-color: #c26cb4; /* Violet color for selection */
+         color: #fff; /* Optional: change text color to white */
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <div>
+        <h1>JQUERY SESSION</h1>
+    </div>
+    <div class="container">
+        <a href="../index.html" style="color:  rgb(22, 19, 3);">WIDGETS</a> 
+    </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html" style="color: rgb(22, 19, 3)d;">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>MENU</u></h1>
+            <ul id="menu">
+                <li class="ui-state-disabled"><div>Toys (n/a)</div></li>
+                <li><div>Books</div></li>
+                <li><div>Clothing</div></li>
+                <li><div>Electronics</div>
+                  <ul>
+                    <li class="ui-state-disabled"><div>Home Entertainment</div></li>
+                    <li><div>Car Hifi</div></li>
+                    <li><div>Utilities</div></li>
+                  </ul>
+                </li>
+                <li><div>Movies</div></li>
+                <li><div>Music</div>
+                  <ul>
+                    <li><div>Rock</div>
+                      <ul>
+                        <li><div>Alternative</div></li>
+                        <li><div>Classic</div></li>
+                      </ul>
+                    </li>
+                    <li><div>Jazz</div>
+                      <ul>
+                        <li><div>Freejazz</div></li>
+                        <li><div>Big Band</div></li>
+                        <li><div>Modern</div></li>
+                      </ul>
+                    </li>
+                    <li><div>Pop</div></li>
+                  </ul>
+                </li>
+                <li class="ui-state-disabled"><div>Specials (n/a)</div></li>
+              </ul>
+        </article>
+    </section>
+    <footer id="foot">
+      <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+  
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#menu" ).menu();
+        } );
+    </script>
+</body>
+</html>

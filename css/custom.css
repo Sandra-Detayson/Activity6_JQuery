@@ -1,0 +1,84 @@
+header {
+    background: linear-gradient(to bottom, #e7bdd2, #cf0793); 
+    color: #ffd1dc; 
+    text-align: center;
+    padding: 20px;
+    border: solid 1px #ffe4f7; 
+}
+
+body {
+    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: linear-gradient(to bottom, #f8e8ff, #f1c6ff); 
+}
+
+.container a {
+    color: #ffe4f7; 
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.container a:hover {
+    color: #ffd1dc; 
+    padding: 3px;
+}
+
+nav {
+    background: linear-gradient(to bottom, #b47cff, #d5006d); 
+    float: left;
+    width: 20%;
+    height: 600px;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: #ffe4f7; 
+    font-size: 15px;
+}
+
+nav ul a:hover {
+    color: #ffd1dc; 
+}
+
+article {
+    background: linear-gradient(to bottom, #f1c6ff, #ffb3e6); 
+    float: left;
+    color: #8b008b; 
+    width: 75%;
+    height: 600px;
+    padding-left: 5%;
+}
+
+footer,#foot {
+    text-align: center;
+    background: linear-gradient(to bottom, #e7bdd2, #cf0793);
+    color: #ffe4f7; 
+    padding: 20px;
+    font-size: 15px;
+    border: solid 1px #ffe4f7; 
+}  
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+footer, #foot {
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(to bottom, #eb4196, #9b1689);
+    color: #ffe4f7; 
+    padding: 20px;
+    font-size: 15px;
+    border-top: solid 1px #ffe4f7;
+}

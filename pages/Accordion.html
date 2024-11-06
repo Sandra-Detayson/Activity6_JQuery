@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+      #accordion h3 {
+        background-color: initial; 
+        color: black; 
+        margin-right: 50px;
+      }
+      #accordion div {
+        margin-right: 50px;
+      }
+      #accordion .ui-state-active {
+        background-color: rgb(211, 13, 122);
+        color: white;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    </style>
+</head>
+<body>
+    <header>
+      <div>
+        <h1>JQUERY SESSION</h1>
+      </div>
+      <div class="container">
+          <a href="../index.html" style="color: rgb(22, 19, 3);">WIDGETS</a> 
+      </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="../index.html">HOME</a></li></ul>
+            <ul><li><a href="Accordion.html" style="color: rgb(22, 19, 3);">ACCORDION</a></li></ul>
+            <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="Menu.html">MENU</a></li></ul>
+            <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>ACCORDION</u></h1>
+            <div id="accordion">
+                <h3>Perspective 1</h3>
+                <div>
+                  <p>
+                    Love is a profound connection that transcends simple emotion; 
+                    it's a bond that makes life meaningful. For many, love is about 
+                    selflessness and understanding, an enduring sense of commitment 
+                    that goes beyond personal interests. It's not always about grand 
+                    gestures but often found in small acts of kindness and support. 
+                    True love sees the flaws, accepts them, and continues to care 
+                    unconditionally, making it a powerful force that can drive people 
+                    to be their best selves.
+                  </p>
+                </div>
+                <h3>Perspective 2</h3>
+                <div>
+                  <p>
+                    To others, love is a journey that teaches growth and patience. 
+                    It’s not always perfect, and misunderstandings are inevitable, 
+                    but it’s through these challenges that love is strengthened. Each 
+                    relationship teaches us more about ourselves and what it means to 
+                    share our lives with someone else. Love requires effort and often 
+                    involves making sacrifices, but it is these very sacrifices that 
+                    foster a deeper connection and create lasting memories. For many, 
+                    the ups and downs of love are what make it so valuable.
+                  </p>
+                </div>
+                <h3>Perspective 3</h3>
+                <div>
+                  <p>
+                    Some view love as a partnership where both people work together to 
+                    achieve common goals. This perspective emphasizes mutual respect, 
+                    trust, and communication as essential foundations. Without these, 
+                    love can feel unbalanced, and resentment can build. However, when 
+                    two people share similar values and work toward a shared future, 
+                    love becomes a steady, reliable force. It’s not just a feeling but 
+                    a commitment to support each other’s dreams and aspirations, creating 
+                    a life that’s more fulfilling together than apart.
+              
+                  </p>
+                  <ul>
+                    <li>List item one</li>
+                    <li>List item two</li>
+                    <li>List item three</li>
+                  </ul>
+                </div>
+                <h3>Perspective 4</h3>
+                <div>
+                  <p>
+                    For some, love is a journey of self-discovery. They believe 
+                    that through loving others, they learn more about their own 
+                    strengths, weaknesses, and desires. Love, in this sense, is 
+                    as much about self-reflection as it is about connection. By 
+                    navigating the complexities of relationships, people often 
+                    discover parts of themselves they never knew existed, making 
+                    love a path to personal growth and inner understanding.
+                  </p>
+                  <p>
+                    For some, love is a journey of self-discovery. They believe 
+                    hat through loving others, they learn more about their own 
+                    strengths, weaknesses, and desires. Love, in this sense, is 
+                    as much about self-reflection as it is about connection. By 
+                    navigating the complexities of relationships, people often 
+                    discover parts of themselves they never knew existed, making 
+                    love a path to personal growth and inner understanding.
+                  </p>
+                </div>
+              </div>
+        </article>
+    </section>
+    <footer id="foot">
+      <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>
+  
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function(){
+            $( "#accordion" ).accordion();
+        });
+    </script>
+</body>
+</html>

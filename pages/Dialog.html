@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <style>
+      label, input { display: block; }
+      input.text { margin-bottom: 12px; width: 95%; padding: 0.4em; }
+      fieldset { padding: 0; border: 0; margin-top: 25px; }
+      h1 { font-size: 1.2em; margin: 0.6em 0; } 
+      
+      /* Global header style for all pages */
+      header {
+        background: linear-gradient(to bottom, #e7bdd2, #cf0793); 
+        color: #ffd1dc; 
+        text-align: center;
+        padding: 20px;
+        border: solid 1px #ffe4f7; 
+      }
+      
+      /* Specific style for the dialog header */
+      .dialog-header {
+        font-size: 1.2em; /* Adjust font size if needed */
+        margin-bottom: 1em; /* Adds some spacing below the dialog header */
+        border-bottom: solid 1px #ffe4f7;
+        padding: 10px; /* Adjust padding to fit dialog design */
+      }
+
+      /* Body styling */
+      body {
+        font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
+        background: linear-gradient(to bottom, #f8e8ff, #f1c6ff);
+      }
+      div#users-contain { width: 350px; margin: 20px 0; }
+      div#users-contain table { 
+        margin: 1em 0; 
+        border-collapse: collapse; 
+        width: 100%; 
+        background-color: #f3e6f8; 
+      }
+      div#users-contain table td, 
+      div#users-contain table th { 
+        border: 1px solid #e79ed5; 
+        padding: 0.6em 10px; 
+        text-align: left; 
+        background-color: #ffffff; 
+      }
+      div#users-contain table th { 
+        background-color: #d3a2d8; 
+        color: #ffffff; 
+      }
+      .ui-dialog .ui-state-error { padding: 0.3em; }
+      .validateTips { border: 1px solid transparent; padding: 0.3em; }
+    
+      
+      button, .ui-dialog button {
+        background-color: #d484a6; 
+        color: #ffffff; 
+        border: 1px solid #c2698d; 
+        padding: 0.4em 1em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px; 
+      }
+      button:hover, .ui-dialog button:hover {
+        background-color: #c2698d; 
+      }
+      button:active, .ui-dialog button:active {
+        background-color: #b05c7c; 
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>JQUERY SESSION</h1>
+    </div>
+    <div class="container">
+      <a href="../index.html">WIDGETS</a>
+    </div>
+  </header>
+  
+  <section>
+      <nav>
+          <ul><li><a href="../index.html">HOME</a></li></ul>
+          <ul><li><a href="Accordion.html">ACCORDION</a></li></ul>
+          <ul><li><a href="Autocomplete.html">AUTO COMPLETE</a></li></ul>
+          <ul><li><a href="Button.html">BUTTON</a></li></ul>
+          <ul><li><a href="Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+          <ul><li><a href="Controlgroup.html">CONTROL GROUP</a></li></ul>
+          <ul><li><a href="Datepicker.html">DATE PICKER</a></li></ul>
+          <ul><li><a href="Dialog.html" style="color: rgb(22, 19, 3);">DIALOG</a></li></ul>
+          <ul><li><a href="Menu.html">MENU</a></li></ul>
+          <ul><li><a href="Progressbar.html">PROGRESS BAR</a></li></ul>
+          <ul><li><a href="Selectmenu.html">SELECT MENU</a></li></ul>
+          <ul><li><a href="Slider.html">SLIDER</a></li></ul>
+          <ul><li><a href="Spinner.html">SPINNER</a></li></ul>
+          <ul><li><a href="Tabs.html">TABS</a></li></ul>
+          <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
+      </nav>
+      <article>
+          <h1><u>DIALOG</u></h1>
+          <div id="dialog-form" title="Create new user">
+              <p class="validateTips">All form fields are required.</p>
+             
+              <form>
+                <fieldset>
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+             
+                  <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                  <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+                </fieldset>
+              </form>
+            </div>
+             
+             
+            <div id="users-contain" class="ui-widget">
+              <h1>Existing Users:</h1>
+              <table id="users" class="ui-widget ui-widget-content">
+                <thead>
+                  <tr class="ui-widget-header ">
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sandra Detayson</td>
+                    <td>sandradetayson@gmail.com</td>
+                    <td>sandra@112233</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <button id="create-user">Create new user</button>
+      </article>
+  </section>
+  <footer id="foot">
+    <p>College of Information and Computing Sciences &copy; 2022</p> 
+  </footer>
+
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/jquery-ui.js"></script>
+  <script>
+      $( function() {
+        var dialog, form,
+     
+          // From https://html.spec.whatwg.org/multipage/input.html#e-mail-state-%28type=email%29
+          emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+          name = $( "#name" ),
+          email = $( "#email" ),
+          password = $( "#password" ),
+          allFields = $( [] ).add( name ).add( email ).add( password ),
+          tips = $( ".validateTips" );
+     
+        function updateTips( t ) {
+          tips
+            .text( t )
+            .addClass( "ui-state-highlight" );
+          setTimeout(function() {
+            tips.removeClass( "ui-state-highlight", 1500 );
+          }, 500 );
+        }
+     
+        function checkLength( o, n, min, max ) {
+          if ( o.val().length > max || o.val().length < min ) {
+            o.addClass( "ui-state-error" );
+            updateTips( "Length of " + n + " must be between " +
+              min + " and " + max + "." );
+            return false;
+          } else {
+            return true;
+          }
+        }
+     
+        function checkRegexp( o, regexp, n ) {
+          if ( !( regexp.test( o.val() ) ) ) {
+            o.addClass( "ui-state-error" );
+            updateTips( n );
+            return false;
+          } else {
+            return true;
+          }
+        }
+     
+        function addUser() {
+          var valid = true;
+          allFields.removeClass( "ui-state-error" );
+     
+          valid = valid && checkLength( name, "username", 3, 16 );
+          valid = valid && checkLength( email, "email", 6, 80 );
+          valid = valid && checkLength( password, "password", 5, 16 );
+     
+          valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
+          valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
+          valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
+     
+          if ( valid ) {
+            $( "#users tbody" ).append( "<tr>" +
+              "<td>" + name.val() + "</td>" +
+              "<td>" + email.val() + "</td>" +
+              "<td>" + password.val() + "</td>" +
+            "</tr>" );
+            dialog.dialog( "close" );
+          }
+          return valid;
+        }
+     
+        dialog = $( "#dialog-form" ).dialog({
+          autoOpen: false,
+          height: 400,
+          width: 350,
+          modal: true,
+          buttons: {
+            "Create an account": addUser,
+            Cancel: function() {
+              dialog.dialog( "close" );
+            }
+          },
+          close: function() {
+            form[ 0 ].reset();
+            allFields.removeClass( "ui-state-error" );
+          }
+        });
+     
+        form = dialog.find( "form" ).on( "submit", function( event ) {
+          event.preventDefault();
+          addUser();
+        });
+     
+        $( "#create-user" ).button().on( "click", function() {
+          dialog.dialog( "open" );
+        });
+      } );
+  </script>
+</body>
+</html>

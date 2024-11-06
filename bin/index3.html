@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAVASCRIPT SESSION</title>
+  <link rel="stylesheet" href="css/custom.css">
+  
+</head>
+  <body>
+
+    <h1 id="result"></h1>
+    <h2 class="output"></h2>
+    <h3 id="outputName"></h3>
+
+    <button type="button" onclick="alert(computeTwoNumbers(12,3));">Click Me</button>
+    
+    <button type="button" onclick="confirmSubmission();">Click me Again</button>
+  
+    <button type="button" onclick="ComputeGrade();">Activity</button>
+    <br><br>
+    <h3 id="compute"></h3>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript">
+          document.write("HELLO WORLD");
+          console.log("Hello World");           
+          //alert("HELLO WORLD");
+
+          let name = "JEREMIE ROBLES";
+          var age = 20;
+          const remarks = "INSTRUCTOR";
+          document.write("<br>");
+          document.write(name + " " + age + " " + remarks);  
+
+          document.getElementById("result").innerHTML = name + " " + age + " " + remarks;
+          document.getElementsByClassName("output")[0].innerHTML= name + " " + age + " " + remarks;
+
+         document.getElementById("outputName").innerHTML = displayName("jeremie robles");
+
+        document.write("<br>");
+        document.write(displayName("JEREMEIE ROBLES"));
+
+        console.log(computeTwoNumbers(12, 3));
+        document.write(computeTwoNumbers(12, 3));
+        //alert(computeTwoNumbers(12, 3));
+        document.getElementById("compute").innerHTML = computeTwoNumbers(12, 3);
+
+        //FUNCTION TO COMPUTE 2 NUMBERS USING ALERTS
+        //inputTwoNumbers();
+
+        //checkGrade();
+        //ComputeGrade();
+
+       // document.write(loopNumbers());
+        //loopNumbers();
+    </script> 
+  </body>
+</html>
+
+
+
+
+
+
+
+
+<!-- 
+  <div>
+    <h1>JAVASCRIPT SESSION OCT 10 2024</h1>
+    <button type="button" onclick="buttonAlert()">Click Me!</button>
+</div>
+<div class="second">
+
+</div>
+
+</body>
+</html>
+
+
+<h1>With Dynamic Parameter</h1>
+<h3 id="sampleComputation"></h3>
+<button id="secondComputation" onclick="buttonAlert()"></button>
+<h2 class="exname"></h2> -->

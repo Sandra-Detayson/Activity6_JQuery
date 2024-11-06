@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        button{
+            background-color: rgb(211, 13, 122);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 20px;
+        
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>JQUERY SESSION</h1>
+        </div>
+        <div class="container">
+            <a href="index.html" style="color: rgb(22, 19, 3);">WIDGETS</a> 
+        </div>
+    </header>
+    <section>
+        <nav>
+            <ul><li><a href="index.html" style="color: rgb(22, 19, 3);">HOME</a></li></ul>
+            <ul><li><a href="pages/Accordion.html">ACCORDION</a></li></ul>
+            <ul><li><a href="pages/Autocomplete.html">AUTO COMPLETE</a></li></ul>
+            <ul><li><a href="pages/Button.html">BUTTON</a></li></ul>
+            <ul><li><a href="pages/Checkboxradio.html">CHECKBOX RADIO</a></li></ul>
+            <ul><li><a href="pages/Controlgroup.html">CONTROL GROUP</a></li></ul>
+            <ul><li><a href="pages/Datepicker.html">DATE PICKER</a></li></ul>
+            <ul><li><a href="pages/Dialog.html">DIALOG</a></li></ul>
+            <ul><li><a href="pages/Menu.html">MENU</a></li></ul>
+            <ul><li><a href="pages/Progressbar.html">PROGRESS BAR</a></li></ul>
+            <ul><li><a href="pages/Selectmenu.html">SELECT MENU</a></li></ul>
+            <ul><li><a href="pages/Slider.html">SLIDER</a></li></ul>
+            <ul><li><a href="pages/Spinner.html">SPINNER</a></li></ul>
+            <ul><li><a href="pages/Tabs.html">TABS</a></li></ul>
+            <ul><li><a href="pages/Tooltip.html">TOOL TIP</a></li></ul>
+        </nav>
+        <article>
+            <h1><u>HOME</u></h1>
+            <div class="row">
+                <div class="col-2"> 
+                    <button id="idbutton">ID</button>
+                    <button class="classbutton">CLASS</button>
+                    <button id="Information">Click Me to Show Info</button>
+                    <button id="hideInfo">Click Me to Hide Info</button>
+                    <h1 id="showInfo" style="display:none;">Sandra</h1>
+                </div>
+            </div>
+        </div>  
+        </article>
+    </section>
+    <footer id="foot">
+        <p>College of Information and Computing Sciences &copy; 2022</p> 
+    </footer>    
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#idbutton").click(function(){
+                alert("ID Button was clicked");
+            });
+
+            $(".classbutton").click(function(){
+                alert("Class Button was clicked");
+            });
+
+            $("#Information").click(function(){
+                $("#showInfo").show();
+            });
+
+            $("#hideInfo").click(function(){
+                $("#showInfo").hide();
+            });
+        });
+    </script>
+</body>
+</html>
