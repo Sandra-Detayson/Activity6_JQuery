@@ -8,73 +8,55 @@
     <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <style>
-
-  
     * {
         font-family: Cambria, serif;
     }
-
-    
     .ui-dialog {
-        background-color: #f3e6f8; /* Light violet background for dialog */
-        border: 1px solid #d3a2d8; /* Violet border */
-        color: #333; /* Text color */
+        background-color: #f3e6f8; 
+        border: 1px solid #d3a2d8; 
+        color: #333;
     }
-
     .ui-dialog-titlebar {
-        background-color: #d3a2d8; /* Darker violet for title bar */
-        color: #ffffff; /* White text in title bar */
+        background-color: #d3a2d8; 
+        color: #ffffff; 
         font-weight: bold;
     }
-
-    /* Hide the close button in the title bar */
     .ui-dialog-titlebar-close {
         display: none;
     }
-
-  
     #progressbar {
         margin-top: 20px;
-        background-color: #ffffff; /* White background for the progress bar container */
-        border: 1px solid #e79ed5; /* Light pink border */
+        background-color: #ffffff; 
+        border: 1px solid #e79ed5; 
         height: 20px;
-        border-radius: 5px; /* Rounded corners */
-
-    }
-
-    
+        border-radius: 5px; 
+    }  
     .ui-progressbar-value {
-        background-color: #d484a6; /* Light pink for the filled portion */
-        border-radius: 5px; /* Rounded corners for smooth filling */
-    }
-
-    
+        background-color: #d484a6; 
+        border-radius: 5px; 
+    } 
     .progress-label {
         font-weight: bold;
-        text-shadow: 1px 1px 0 #ffffff; /* White shadow for text */
-        color: #d3a2d8; /* Violet color for text */
+        text-shadow: 1px 1px 0 #ffffff; 
+        color: #d3a2d8; 
     }
-
-    
     button, .ui-dialog button {
-        background-color: #d484a6; /* Light pink background for buttons */
-        color: #f180cf; /* White text for contrast */
-        border: 1px solid #c2698d; /* Slightly darker pink border */
+        background-color: #d484a6; 
+        color: #f180cf; 
+        border: 1px solid #c2698d; 
         padding: 0.4em 1em;
         font-weight: bold;
         cursor: pointer;
-        border-radius: 5px; /* Rounded corners for a softer look */
+        border-radius: 5px; 
     }
     button:hover, .ui-dialog button:hover {
-        background-color: #c2698d; /* Darker pink on hover */
+        background-color: #c2698d; 
     }
     button:active, .ui-dialog button:active {
-        background-color: #b05c7c; /* Even darker pink when active */
+        background-color: #b05c7c; 
     }
-
-    /* Background styling for the whole page */
     body {
-        background: linear-gradient(to bottom right, #f7d7f0, #d9a2e6); /* Light pink to violet gradient */
+        background: linear-gradient(to bottom right, #f7d7f0, #d9a2e6); 
         align-content: center;
     }
     </style>

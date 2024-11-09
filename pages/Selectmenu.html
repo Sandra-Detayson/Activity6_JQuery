@@ -9,17 +9,23 @@
     <link rel="stylesheet" href="/resources/demos/style.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <style>
-        fieldset {
-          border: 0;
-        }
-        label {
-          display: block;
-          margin: 30px 0 0 0;
-        }
-        .overflow {
-          height: 200px;
-        }
-      </style>
+    fieldset {
+      border: 0;
+      margin-left: 300px;
+    }
+    label {
+      display: block;
+      margin: 20px 0 0 0;
+    }
+ 
+    #circle {
+      float: left;
+      background: yellow;
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+    }
+    </style>
 </head>
 <body>
     <header>
@@ -49,70 +55,35 @@
             <ul><li><a href="Tooltip.html">TOOL TIP</a></li></ul>
         </nav>
         <article>
-            <h1><u>SELECT MENU</u></h1>
+            <h1><u>SELECT MENU</u></h1> 
             <div class="demo">
- 
-                <form action="#">
-                 
-                  <fieldset>
-                    <label for="speed">Select a speed</label>
-                    <select name="speed" id="speed">
-                      <option>Slower</option>
-                      <option>Slow</option>
-                      <option selected="selected">Medium</option>
-                      <option>Fast</option>
-                      <option>Faster</option>
-                    </select>
-                 
-                    <label for="files">Select a file</label>
-                    <select name="files" id="files">
-                      <optgroup label="Scripts">
-                        <option value="jquery">jQuery.js</option>
-                        <option value="jqueryui">ui.jQuery.js</option>
-                      </optgroup>
-                      <optgroup label="Other files">
-                        <option value="somefile">Some unknown file</option>
-                        <option value="someotherfile">Some other file with a very long option text</option>
-                      </optgroup>
-                    </select>
-                 
-                    <label for="number">Select a number</label>
-                    <select name="number" id="number">
-                      <option>1</option>
-                      <option selected="selected">2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
-                      <option>7</option>
-                      <option>8</option>
-                      <option>9</option>
-                      <option>10</option>
-                      <option>11</option>
-                      <option>12</option>
-                      <option>13</option>
-                      <option>14</option>
-                      <option>15</option>
-                      <option>16</option>
-                      <option>17</option>
-                      <option>18</option>
-                      <option>19</option>
-                    </select>
-                 
-                    <label for="salutation">Select a title</label>
-                    <select name="salutation" id="salutation">
-                      <option disabled="" selected="">Please pick one</option>
-                      <option>Mr.</option>
-                      <option>Mrs.</option>
-                      <option>Dr.</option>
-                      <option>Prof.</option>
-                      <option>Other</option>
-                    </select>
-                  </fieldset>
-                 
-                </form>
-                 
-                </div>
+            <form action="#">
+              <div id="circle"></div>
+             
+              <fieldset>
+                <label for="radius">Circle radius</label>
+                <select name="radius" id="radius">
+                  <option value="50">50px</option>
+                  <option value="100">100px</option>
+                  <option value="150" selected="selected">150px</option>
+                  <option value="200">200px</option>
+                  <option value="250">250px</option>
+                </select>
+             
+                <label for="color">Circle color</label>
+                <select name="color" id="color">
+                  <option value="black">Black</option>
+                  <option value="red">Red</option>
+                  <option value="yellow" selected="selected">Yellow</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                </select>
+              </fieldset>
+             
+            </form>
+             
+            </div>
+             
         </article>
     </section>
     <footer id="foot">
@@ -122,18 +93,24 @@
     <script src="../js/jquery-3.7.1.min.js"></script>
     <script src="../js/jquery-ui.js"></script>
     <script>
-        $( function() {
-          $( "#speed" ).selectmenu();
-       
-          $( "#files" ).selectmenu();
-       
-          $( "#number" )
-            .selectmenu()
-            .selectmenu( "menuWidget" )
-              .addClass( "overflow" );
-       
-          $( "#salutation" ).selectmenu();
-        } );
+    $( function() {
+      var circle = $( "#circle" );
+   
+      $( "#radius" ).selectmenu({
+        change: function( event, data ) {
+          circle.css({
+            width: data.item.value,
+            height: data.item.value
+          });
+        }
+       });
+   
+      $( "#color" ).selectmenu({
+         change: function( event, data ) {
+           circle.css( "background", data.item.value );
+         }
+       });
+    } );
     </script>
 </body>
 </html>
